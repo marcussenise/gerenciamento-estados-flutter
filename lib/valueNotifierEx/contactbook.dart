@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:statemanegement/contact.dart';
+import 'package:statemanegement/valueNotifierEx/contact.dart';
 
 class ContactBook extends ValueNotifier<List<Contact>>{
   ContactBook._sharedInstance() : super([]);
