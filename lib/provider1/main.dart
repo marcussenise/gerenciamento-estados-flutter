@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => BreadCrumbProvider(),
       child: MaterialApp(
-          title: 'Inherited Widget',
+          title: 'Provider',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
