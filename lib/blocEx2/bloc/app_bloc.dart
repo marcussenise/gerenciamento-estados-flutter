@@ -8,8 +8,9 @@ import 'package:statemanegement/blocEx2/models.dart';
 class AppBloc extends Bloc<AppAction, AppState> {
   final LoginApiProtocol loginApi;
   final NotesApiProtocol notesApi;
+  final LoginHandle acceptedLoginHandle;
 
-  AppBloc({required this.loginApi, required this.notesApi})
+  AppBloc({required this.loginApi, required this.notesApi, required this.acceptedLoginHandle,})
       : super(const AppState.empty()) {
     on<LoginAction>((event, emit) async {
       //start loading
@@ -47,7 +48,7 @@ class AppBloc extends Bloc<AppAction, AppState> {
       );
       // get the login handle
       final loginHandle = state.loginHandle;
-      if (loginHandle != const LoginHandle.fooBar()) {
+      if (loginHandle != acceptedLoginHandle) {
         // invalid login handle, cannot fetch notes
         emit(
           AppState(
